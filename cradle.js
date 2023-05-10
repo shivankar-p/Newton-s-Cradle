@@ -135,7 +135,7 @@ export class NewtonsCradle extends THREE.Group {
             min: idx === 0 ? -Math.PI : 0,
             max: idx === 0 ? 0 : Math.PI
           };
-          ballDummy.maxAngle = Math.PI * 0.125;
+          ballDummy.maxAngle = Math.PI * 0.3;
         }
         return ballDummy;
       });
@@ -161,5 +161,9 @@ export class NewtonsCradle extends THREE.Group {
       this.getPos = () => {
         return moveableDummies[0].rotation;
       };
+      this.getTarget = () => {
+        return moveableDummies[0]
+      }
+
     }
 }
