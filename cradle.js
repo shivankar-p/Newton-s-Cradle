@@ -7,9 +7,11 @@ export class NewtonsCradle extends THREE.Group {
       super();
       // base
       let baseG = new RoundedBoxGeometry(14, 1, 7, 3, 0.25).translate(0, 0.5, 0);
-      let baseM = new THREE.MeshLambertMaterial({
-        color: new THREE.Color(0, 0.75, 1).multiplyScalar(0.5)
-      });
+    //   let baseM = new THREE.MeshLambertMaterial({
+    //     color: new THREE.Color(0, 0.75, 1).multiplyScalar(0.5)
+    //   });
+      let baseM = new THREE.MeshPhongMaterial({map: new THREE.TextureLoader().load('/textures/stand.jpg')});
+      baseM.receiveShadow=true;
       let base = new THREE.Mesh(baseG, baseM);
       this.add(base);
   
@@ -157,7 +159,7 @@ export class NewtonsCradle extends THREE.Group {
       };
 
       this.getPos = () => {
-        return moveableDummies[0].rotation.z;
+        return moveableDummies[0].rotation;
       };
     }
 }
