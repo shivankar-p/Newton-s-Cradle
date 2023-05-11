@@ -171,6 +171,18 @@ document.addEventListener("keydown", event => {
     }
     else currentCam = camera1
   }
+
+  if(event.key == "ArrowLeft"){
+    if(currentCam == camera2){
+        camera2.rotation.y -= 0.1;
+    }
+  }
+
+  if(event.key == "ArrowRight"){
+    if(currentCam == camera2){
+        camera2.rotation.y += 0.1;
+    }
+  }
 });
 
 // let camera_2_positions = newtonsCradle.getTarget().position;
